@@ -5,7 +5,7 @@ class ConnectorError(Exception):
         self.original=original
 
 class ConnectorAuthError(ConnectorError): ...       # wrong/expired password, disabled login
-class ConnectorNetworkError(ConnectionError): ...   # host unreachable, port closed, dropped connection
+class ConnectorNetworkError(ConnectorError): ...   # host unreachable, port closed, dropped connection
 class ConnectorTimeoutError(ConnectorError): ...    # login or query timeout
 class ConnectorPermissionError(ConnectorError): ...  # authenticated, but not allowed
 class ConnectorConfigError(ConnectorError): ...      # missing ODBC driver, untrusted TLS cert
